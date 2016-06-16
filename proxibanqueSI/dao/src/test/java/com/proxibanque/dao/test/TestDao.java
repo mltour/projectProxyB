@@ -33,24 +33,23 @@ public class TestDao extends TestCase{
 	
 		appContext = new ClassPathXmlApplicationContext("spring-data.xml");
 		conseiller = new Conseiller("myr","mdp","LOPEZ","Camille");
-		client = new Client("TOUR","myriam","my@ixxi.fr","bordeaux",conseiller);
-		compteCourant = new CompteCourant("0000001",1000,"Courant",client,-200);
-		compteEpargne = new CompteEpargne("0000002",20000,"Epargne",client,2/100);
+		client = new Client("TOUR","myriam","my@ixxi.fr","bordeaux",1);
+//		compteCourant = new CompteCourant("0000001",1000,"Courant",client,-200);
+//		compteEpargne = new CompteEpargne("0000002",20000,"Epargne",client,2/100);
 		
 		iDaoConseiller = (IDaoConseiller) appContext.getBean("iDaoConseiller");
 		
-		//iDaoClient = (IDaoClient) appContext.getBean("iDaoClient");
-		//iDaoCompte = (IDaoCompte) appContext.getBean("iDaoCompte");
+//		iDaoClient = (IDaoClient) appContext.getBean("iDaoClient");
+//		iDaoCompte = (IDaoCompte) appContext.getBean("iDaoCompte");
 	}
 	
 	@Override
 	protected void tearDown() throws Exception {
 		super.tearDown();
-		conseiller = null;
+		
 		appContext = null;
 		iDaoConseiller = null;
-		
-	}
+		}
 	
 	public void testSaveConseiller(){
 		iDaoConseiller.save(conseiller);

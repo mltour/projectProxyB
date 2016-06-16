@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import com.proxibanque.dao.IDaoConseiller;
 import com.proxibanque.domaine.Conseiller;
 
-@Component
+@Service("iGestionAuthentification")
 public class AuthentificationService implements IAuthentificationService {
 
 	

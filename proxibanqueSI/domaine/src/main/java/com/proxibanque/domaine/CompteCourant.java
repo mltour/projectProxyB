@@ -26,15 +26,12 @@ public class CompteCourant extends Compte {
 		this.decouvertAutorise = decouvertAutorise;
 	}
 	
-	public CompteCourant(String numero, int solde, String typeCompte, Client client, int decouvertAutorise) {
-		super(numero, solde, typeCompte, client);
+	public CompteCourant(String numero, int solde, String typeCompte, int idClient, int decouvertAutorise) {
+		super(numero, solde, typeCompte, idClient);
 		this.decouvertAutorise = decouvertAutorise;
 	}
 	// Getters/Setters
-	
-	
-
-	
+		
 
 	public int getDecouvertAutorise() {
 		return decouvertAutorise;

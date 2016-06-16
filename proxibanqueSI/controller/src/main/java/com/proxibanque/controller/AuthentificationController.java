@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.proxibanque.domaine.Conseiller;
 import com.proxibanque.service.IAuthentificationService;
 
-@Component
+//@Component
 @RestController
 @CrossOrigin
 @RequestMapping(value ="/authentification")
@@ -19,19 +19,19 @@ import com.proxibanque.service.IAuthentificationService;
 public class AuthentificationController {
 
 	@Autowired
-	private IAuthentificationService gestionAuthentification;
+	private IAuthentificationService iGestionAuthentification;
 
 	public IAuthentificationService getiAuthentificationService() {
-		return gestionAuthentification;
+		return iGestionAuthentification;
 	}
 
 	public void setiAuthentificationService(IAuthentificationService gestionAuthentification) {
-		this.gestionAuthentification = gestionAuthentification;
+		this.iGestionAuthentification = gestionAuthentification;
 	}
 	@CrossOrigin
 	@RequestMapping(value = "/conseiller/login/{identifiant}/{motDePasse}", method = RequestMethod.GET)
 	public Conseiller getAuthentification(@PathVariable(value = "identifiant") String login, @PathVariable(value = "motDePasse") String mdp )  {
 		System.out.println("oui");
-		return this.gestionAuthentification.authentification(login, mdp);
+		return this.iGestionAuthentification.authentification(login, mdp);
 	}
 }

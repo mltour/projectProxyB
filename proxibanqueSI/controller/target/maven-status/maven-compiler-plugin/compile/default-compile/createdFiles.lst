@@ -1,2 +1,5 @@
+com\proxibanque\controller\ClientController.class
 com\proxibanque\controller\AuthentificationController.class
 com\proxibanque\ProxibanqueSiApplication.class
+com\proxibanque\controller\AgenceController.class
+com\proxibanque\controller\GestionBancaireController.class

@@ -1,2 +1,8 @@
+com\proxibanque\service\GestionBancaireService.class
+com\proxibanque\service\AgenceService.class
 com\proxibanque\service\AuthentificationService.class
+com\proxibanque\service\ClientService.class
+com\proxibanque\service\IAgenceService.class
 com\proxibanque\service\IAuthentificationService.class
+com\proxibanque\service\IClientService.class
+com\proxibanque\service\IGestionBancaireService.class

@@ -16,28 +16,28 @@ import javax.persistence.OneToMany;
  *
  */
 @Entity
-public class Conseiller implements Serializable {
+public class Conseiller implements Serializable{
 
 	// Propriétés
 	
+	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idConseiller;
 	private String nom;
 	private String prenom;
-	
-	@Column(unique=true)
 	private String login;
 	private String mdp;
 	
-	@OneToMany(mappedBy="conseiller",cascade=CascadeType.ALL)
-	private List<Client> listeClient;
+	
+
+//	@OneToMany(mappedBy="conseiller")
+//	private Client Client;
 	
 	// Constructeurs
 	
 	public Conseiller() {
-		super();
-	}
+			}
 	
 	public Conseiller( String login, String mdp, String nom, String prenom) {
 		super();
@@ -86,12 +86,12 @@ public class Conseiller implements Serializable {
 	public void setMdp(String mdp) {
 		this.mdp = mdp;
 	}
-	public List<Client> getListeClient() {
-		return listeClient;
-	}
-	public void setListeClient(List<Client> listeClient) {
-		this.listeClient = listeClient;
-	}
+//	public List<Client> getListeClient() {
+//		return listeClient;
+//	}
+//	public void setListeClient(List<Client> listeClient) {
+//		this.listeClient = listeClient;
+//	}
 
 	@Override
 	public String toString() {

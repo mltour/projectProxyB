@@ -25,8 +25,8 @@ public class CompteEpargne extends Compte {
 		super();
 		this.tauxRemuneration = tauxRemuneration;
 	}
-public CompteEpargne(String numero, int solde, String typeCompte, Client client, double tauxRemuneration) {
-		super(numero, solde, typeCompte, client);
+public CompteEpargne(String numero, int solde, String typeCompte, int idClient, double tauxRemuneration) {
+		super(numero, solde, typeCompte, idClient);
 		this.tauxRemuneration = tauxRemuneration;
 	}
 	// Getters/Setters

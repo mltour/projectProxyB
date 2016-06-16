@@ -13,7 +13,7 @@ import com.proxibanque.domaine.Conseiller;
 @Repository("iDaoClient")
 public interface IDaoClient extends JpaRepository<Client, Integer> {
 
-	public List<Client> findByConseiller(Conseiller conseiller);
+	public List<Client> findByIdConseiller(int idConseiller);
 	public List<Client> findAll();
 	
 }

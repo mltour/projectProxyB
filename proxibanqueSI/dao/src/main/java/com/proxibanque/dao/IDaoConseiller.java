@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import com.proxibanque.domaine.Conseiller;
 
-@Component("iDaoConseiller")
+@Repository("iDaoConseiller")
 public interface IDaoConseiller extends JpaRepository<Conseiller, Integer> {
 
 	public Conseiller findByLogin(String login);

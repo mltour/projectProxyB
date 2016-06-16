@@ -15,7 +15,7 @@ import com.proxibanque.domaine.Compte;
 @Repository("iDaoCompte")
 public interface IDaoCompte extends JpaRepository<Compte, Integer> {
 
-	public List<Compte> findByClient(Client client);
+	public List<Compte> findByIdClient(int idClient);
 	public Compte findBytypeCompte(String typeCompte);
 	public Compte findByidCompteBancaire(int idCompteBancaire);
 }

@@ -1,11 +1,14 @@
 package com.proxibanque.domaine;
 
+import java.io.Serializable;
+
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 /**
@@ -15,19 +18,20 @@ import javax.persistence.ManyToOne;
 @Entity
 @Inheritance
 @DiscriminatorColumn(name="COMPTE_TYPE")
-public abstract class Compte {
+public abstract class Compte implements Serializable{
 	
 	// Propriétés
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idCompteBancaire;
 	private String numero;
 	private double solde;
 	private String typeCompte;
 	
-	@ManyToOne
-	private Client client;
+	
+//	@ManyToOne
+	private int idClient;
 	
 	// Constructeurs
 	
@@ -35,13 +39,13 @@ public abstract class Compte {
 		super();
 	}
 		
-	public Compte(String numero, int solde, String typeCompte, Client client) {
+	public Compte(String numero, double solde, String typeCompte, int idClient) {
 		super();
 		
 		this.numero = numero;
 		this.solde = solde;
 		this.typeCompte = typeCompte;
-		this.client = client;
+		this.idClient = idClient;
 	}
 
 	// Getters/Setters
@@ -70,11 +74,20 @@ public abstract class Compte {
 	public void setTypeCompte(String typeCompte) {
 		this.typeCompte = typeCompte;
 	}
-	public Client getClient() {
-		return client;
+
+	public int getIdClient() {
+		return idClient;
 	}
-	public void setClient(Client client) {
-		this.client = client;
+
+	public void setIdClient(int idClient) {
+		this.idClient = idClient;
 	}
+	
+//	public Client getClient() {
+//		return client;
+//	}
+//	public void setClient(Client client) {
+//		this.client = client;
+//	}
 		
 }
