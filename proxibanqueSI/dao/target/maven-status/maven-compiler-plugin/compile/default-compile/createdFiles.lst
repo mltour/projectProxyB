@@ -1,0 +1,3 @@
+com\proxibanque\dao\IDaoClient.class
+com\proxibanque\dao\IDaoConseiller.class
+com\proxibanque\dao\IDaoCompte.class

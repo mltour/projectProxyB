@@ -1,0 +1,5 @@
+com\proxibanque\domaine\CompteEpargne.class
+com\proxibanque\domaine\Conseiller.class
+com\proxibanque\domaine\Client.class
+com\proxibanque\domaine\CompteCourant.class
+com\proxibanque\domaine\Compte.class
