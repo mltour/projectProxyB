@@ -1,0 +1,17 @@
+.visible {
+	visibility: visible;
+	color: red;
+	font-weight: bold;
+}
+
+.invisible {
+	visibility: hidden;
+}
+
+.solde-true {
+	color: green;
+}
+
+.solde-false {
+	color: red;
+}

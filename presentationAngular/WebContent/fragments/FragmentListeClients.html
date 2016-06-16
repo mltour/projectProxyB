@@ -1,0 +1,62 @@
+<head>
+<title>Espace de gestion</title>
+<nav class="navbar navbar-default navbar-fixed-top">
+	<script type="text/javascript" src="js/angular-route.min.js"></script>
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="index.html">ProxiBanque</a>
+
+			<div class="navbar-form navbar-right">
+				<div style="color: white">
+					<h5>
+						<b>Conseiller {{conseiller.prenom}} {{conseiller.nom}} connecté</b>
+					</h5>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>
+</head>
+
+<div class="container theme-showcase" role="main">
+
+	<!-- Main jumbotron for a primary marketing message or call to action -->
+	<div class="jumbotron">
+		<h2>
+			<center>Bienvenue sur le service de gestion de ProxyBanque</center>
+		</h2>
+	</div>
+
+	<div class="page-header">
+
+		<h3>
+			<center>Bonjour {{conseiller.prenom}} {{conseiller.nom}}, voici la liste de vos clients :</center>
+		</h3>
+	</div>
+
+	<!-- <button type="button" ng-click="afficherliste()">Liste Clients</button> -->
+
+	<div class="row">
+		<div class="col-md-6">
+			<table class="table">
+				<thead>
+					<tr>
+						<th># IdClient</th>
+						<th>Prénom</th>
+						<th>Nom</th>
+						<th>Opération</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="client in listeClients">
+						<td>{{client.id}}</td>
+											<td>{{client.prenom}}</td>
+						<td>{{client.nom}}</td>
+						<td><button><a ng-href="#/client/{{client.id}}/{{client.prenom}}/{{client.nom}}" />Voir Comptes </button></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+</body>
