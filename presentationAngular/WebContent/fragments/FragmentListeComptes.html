@@ -1,0 +1,83 @@
+<head>
+<title>Gestion des comptes</title>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+	<script type="text/javascript" src="js/angular-route.min.js"></script>
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="index.html">ProxyBanque</a>
+			<div class="navbar-form navbar-right">
+				<div style="color: white">
+					<h5>
+						<b>Conseiller {{conseiller.prenom}} {{conseiller.nom}} connecté</b>
+					</h5>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>
+</head>
+
+<div class="container theme-showcase" role="main">
+
+	<!-- Main jumbotron for a primary marketing message or call to action -->
+	<div class="jumbotron">
+		<h2>
+			<center>Gestion des comptes</center>
+		</h2>
+	</div>
+
+
+	<div class="page-header">
+
+		<h3>
+			<center>Voici la liste des comptes du client {{client.prenom}} {{client.nom}}</center>
+		</h3>
+	</div>
+
+	<!-- <button type="button" ng-click="afficherliste()">Liste Clients</button> -->
+
+	<div class="row">
+		<div class="col-md-6">
+			<table class="table">
+				<thead>
+					<tr>
+						<th># IdCompte</th>
+						<th>Type de compte</th>
+						<th>Solde</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="compte in listeComptes">
+						<td class='solde-{{(compte.solde<0)}}'>{{compte.id}}</td>
+						<td class='solde-{{(compte.solde<0)}}'>{{compte.type}}</td>
+						<td class='solde-{{(compte.solde<0)}}'>{{compte.solde}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div ng-controller='VirementController'>
+		<button ng-click="toggleMenu()">{{menuState.message}}</button>
+		<button ng-click="retour()">Revenir à l'espace de gestion des clients</button>
+		<span ng-show='menuState.show'>
+
+			<h4>Choisissez le compte à débiter :</h4> 
+			<select ng-model="compte1" ng-options="compte as (compte.id +' '+ compte.type) for compte in listeComptes">
+				<option value="">Selectionner un compte</option>
+		    </select> 
+				<span id="compte1.erreur" class="invisible">Veuillez sélectionner le compte à débiter</span>
+
+			<h4>Choisissez le compte à créditer :</h4> 
+			<select ng-model="compte2" ng-options="compte as (compte.id +' '+ compte.type) for compte in listeComptes">
+				<option value="">Selectionner un compte</option>
+			</select> 
+				<span id="compte2.erreur" class="invisible">Veuillez sélectionner le compte à créditer</span>
+			<div id="comptes.erreur" class="invisible">Les comptes sélectionnés sont identiques</div>
+
+			<h4>Saisissez le montant du virement :</h4> 
+			<input ng-model="montant" />
+			<button type="button" value="Rafraichir" ng-click="virement()">Confirmer le virement</button> 
+			<span id="montant.erreur" class="invisible">Le montant est incorrect</span>
+	</div>
+</div>
+</body>

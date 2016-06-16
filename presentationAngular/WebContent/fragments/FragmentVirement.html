@@ -1,0 +1,42 @@
+<head>
+<title>Gestion des comptes - succés virement</title>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+	<script type="text/javascript" src="js/angular-route.min.js"></script>
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="index.html">ProxyBanque</a>
+			<div class="navbar-form navbar-right">
+				<div style="color: white">
+					<h5>
+						<b>Conseiller {{conseiller.prenom}} {{conseiller.nom}} connecté</b>
+					</h5>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>
+</head>
+
+<div class="container theme-showcase" role="main">
+
+	<!-- Main jumbotron for a primary marketing message or call to action -->
+	<div class="jumbotron">
+		<h2>
+			<center>Gestion des comptes</center>
+		</h2>
+	</div>
+
+	<div class="page-header">
+		<div ng-controller='VirementController'>
+			<h3>
+				<center>Le virement a été éffectué avec succés</center>
+			</h3>
+		</div>
+	</div>
+
+	<div>
+		<h4>
+			Revenir à l'espace client de {{client.prenom}} {{client.nom}} <button type="button" ng-click="retour()">Retour</button>
+		</h4>
+	</div>
+</div>

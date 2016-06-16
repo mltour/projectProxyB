@@ -1,3 +1,4 @@
+<meta charset="UTF-8">
 <head>
 <title>Espace de gestion</title>
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -6,57 +7,91 @@
 		<div class="navbar-header">
 			<a class="navbar-brand" href="index.html">ProxiBanque</a>
 
-			<div class="navbar-form navbar-right">
-				<div style="color: white">
+			<div class="navbar-form navbar-left">
+				<div style="color: #004080">
 					<h5>
 						<b>Conseiller {{conseiller.prenom}} {{conseiller.nom}} connecté</b>
 					</h5>
 				</div>
+			
 			</div>
+			</div>
+			<div><ul class="nav navbar-nav navbar-right">
+                <li><a href="index.html">Déconnexion</a></li>
+            </ul>
+        </div>
 		</div>
-	</div>
+	
+	
 </nav>
 </head>
 
+<body>
+	<div>
+		<br><br><br><br>
+		<img src="images/logoProxiB.png" class="img-circle" width="304" height="236">
+	</div>
+	<br><br>
+
 <div class="container theme-showcase" role="main">
 
-	<!-- Main jumbotron for a primary marketing message or call to action -->
-	<div class="jumbotron">
-		<h2>
-			<center>Bienvenue sur le service de gestion de ProxyBanque</center>
-		</h2>
+	<div>
+		<h3>
+			<center>Bienvenue sur le service de gestion de ProxiBanque</center>
+		</h3>
 	</div>
 
 	<div class="page-header">
 
-		<h3>
+		<h4>
 			<center>Bonjour {{conseiller.prenom}} {{conseiller.nom}}, voici la liste de vos clients :</center>
-		</h3>
+		</h4>
 	</div>
 
 	<!-- <button type="button" ng-click="afficherliste()">Liste Clients</button> -->
-
+	
+	
+	</div>
+	
+	<div class="container theme-showcase" role="main">
 	<div class="row">
 		<div class="col-md-6">
 			<table class="table">
 				<thead>
 					<tr>
-						<th># IdClient</th>
 						<th>Prénom</th>
 						<th>Nom</th>
-						<th>Opération</th>
+						<th>Sélection</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr ng-repeat="client in listeClients">
-						<td>{{client.id}}</td>
-											<td>{{client.prenom}}</td>
+						<td>{{client.prenom}}</td>
 						<td>{{client.nom}}</td>
-						<td><button><a ng-href="#/client/{{client.id}}/{{client.prenom}}/{{client.nom}}" />Voir Comptes </button></td>
+						<td><input type="radio" name="radios" id="radio1" /></td>
+						
+						
 					</tr>
 				</tbody>
 			</table>
 		</div>
 	</div>
+	
+	
+	
 </div>
+	
+	
+	
+
+	
+<div>
+	<button class="btn btn-success" type="button" ng-click="">Edition d'un client</button>
+	<button class="btn btn-success" type="button" ng-click="#/client/{{client.id}}/{{client.prenom}}/{{client.nom}}">Liste des comptes</button>
+</div>
+<br><br>
+<div>
+	<button class="btn btn-success" type="button" ng-click="">Virement</button>
+</div>
+
 </body>

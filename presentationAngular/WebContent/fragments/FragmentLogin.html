@@ -1,27 +1,49 @@
+<meta charset="UTF-8">
 <head>
 <title>ProxibanqueSI</title>
-<nav class="navbar navbar-default navbar-fixed-top">
+</head>
+
+<body>
+	<div>
+		<br><br><br><br>
+		<img src="images/logoProxiB.png" class="img-circle" width="304" height="236">
+	</div>
+	<br><br>
+	
+	<div>
+		<h3>Bienvenue sur l'application ProxibanqueSI</h3><br>
+		<h4>Authentification</h4>
+	</div>
+
 	<div class="container">
-		<div class="navbar-header">
-			<!-- 			<div id='horloge'></div> -->
-
-			<a class="navbar-brand" >ProxibanqueSI</a>
-
-			<div class="navbar-form navbar-right" ng-controller='LoginController'>
-				<div class="form-group">
-					<input ng-model="user" />
-				</div>
-				<div class="form-group">
-					<input type="password" ng-model="pswd" />
-				</div>
-				<button class="btn btn-success" type="button" ng-click="login()">Connexion au système</button>
-				<div></div>
+		<div class="navbar-form navbar-center" ng-controller='LoginController'>
+			<div class="form-group">
+				<input ng-model="user" />
+			</div>
+			<br><br>
+			
+			<div class="form-group">
+				<input type="password" ng-model="pswd" />
+			</div>
+			<br><br>
+			
+			<div>
+				<button class="btn btn-success" type="button" ng-click="login()">Connexion</button>
+			</div>
+			
+			<div>
 				<span id="login.error" class="invisible">Login ou mot de passe incorrects!!</span> 
+			</div>
+			<div>
 				<span id="login.missing" class="invisible">Veuillez	saisir un login et un mot de passe!!</span>
 			</div>
 		</div>
 	</div>
-</nav>
-</head>
+</body>
+	
+
+	
+
+
 
 
